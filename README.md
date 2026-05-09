@@ -18,10 +18,8 @@ conda activate iafgd
 ```
 
 ### :point_right: Blind Face Restoration
-<img src="testdata/faceir/cropped_faces/lq/0729.png" height="126px"/> <img src="testdata/faceir/cropped_faces/results/0729.png" height="126px"/> <img src="testdata/faceir/cropped_faces/lq/0444.png" height="126px"/> <img src="testdata/faceir/cropped_faces/results/0444.png" height="126px"/> <img src="testdata/faceir/cropped_faces/lq/0885.png" height="126px"/> <img src="testdata/faceir/cropped_faces/results/0885.png" height="126px"/> 
-<img src="testdata/faceir/cropped_faces/lq/0500.png" height="126px"/> <img src="testdata/faceir/cropped_faces/results/0500.png" height="126px"/> <img src="testdata/faceir/cropped_faces/lq/Solvay_conference_1927_2_16.png" height="126px"/> <img src="testdata/faceir/cropped_faces/results/Solvay_conference_1927_0018.png" height="126px"/> <img src="testdata/faceir/cropped_faces/lq/Solvay_conference_1927_2_16.png" height="126px"/> <img src="testdata/faceir/cropped_faces/results/Solvay_conference_1927_2_16.png" height="126px"/> 
-
-```
+<img src="testdata/faceir/cropped_faces/lq/0729.png" height="126px"/> <img src="testdata/faceir/cropped_faces/results/0729.png" height="126px"/> <img src="testdata/faceir/cropped_faces/lq/0444.png" height="126px"/>
+<img src="testdata/faceir/cropped_faces/lq/0500.png" height="126px"/> <img src="testdata/faceir/cropped_faces/results/0500.png" height="126px"/> <img src="testdata/faceir/cropped_faces/lq/Solvay_conference.png" height="126px"/>
 
 ## Testing
 ```
@@ -36,7 +34,6 @@ python inference.py -i [image folder/image path] -o [result folder] --task facei
     + configs.train.batch: [training batchsize, validation batchsize] 
     + configs.train.microbatch: total batchsize = microbatch * #GPUS * num_grad_accumulation
 
-```
 #### Blind face restoration
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --standalone --nproc_per_node=8 --nnodes=1 main.py --cfg_path configs/faceir_gfpgan512_lpips.yaml --save_dir [Logging Folder] 
@@ -44,9 +41,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --standalone --nproc_per_node=8 --
 
 + Synthetic data for blind face restoration: [Link](https://drive.google.com/file/d/15Ij-UaI8BQ7fBDF0i4M1wDOk-bnn_C4X/view?usp=drive_link) 
 
-
-```
-####  Blind Face Restoration
+#### Blind Face Restoration
 ```
 python inference.py -i [image folder/image path] -o [result folder] --task faceir --scale 1 --chop_size 256 --chop_stride 256 --bs 16
 ```
@@ -62,5 +57,4 @@ python inference.py -i [image folder/image path] -o [result folder] --task facei
 
 ## Acknowledgement
 
-This project is based on [Improved Diffusion Model]([https://github.com/openai/improved-diffusion](url)), [LDM](https://github.com/CompVis/latent-diffusion),[SinSR](https://github.com/wyf0912/SinSR),[ResShift](https://github.com/zsyOAOA/ResShift)and [BasicSR](https://github.com/XPixelGroup/BasicSR). We also adopt [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) to synthesize the training data for real-world super-resolution. Thanks for their awesome works.
-
+This project is based on [Improved Diffusion Model](https://github.com/openai/improved-diffusion), [LDM](https://github.com/CompVis/latent-diffusion), [SinSR](https://github.com/wyf0912/SinSR), [ResShift](https://github.com/zsyOAOA/ResShift) and [BasicSR](https://github.com/XPixelGroup/BasicSR). We also adopt [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) to synthesize the training data for real-world super-resolution. Thanks for their awesome works.
