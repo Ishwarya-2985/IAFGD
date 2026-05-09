@@ -62,5 +62,5 @@ python inference.py -i [image folder/image path] -o [result folder] --task facei
 
 ## Acknowledgement
 
-This project is based on [Improved Diffusion Model](https://github.com/openai/improved-diffusion), [LDM](https://github.com/CompVis/latent-diffusion), and [BasicSR](https://github.com/XPixelGroup/BasicSR). We also adopt [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) to synthesize the training data for real-world super-resolution. Thanks for their awesome works.
+This project is based on [https://github.com/openai/improved-diffusion](Improved Diffusion Model,), LDM, and BasicSR. We also adopt Real-ESRGAN to synthesize the training data for real-world super-resolution. Thanks for their awesome works.
 
